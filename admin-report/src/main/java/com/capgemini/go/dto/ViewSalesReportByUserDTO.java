@@ -1,5 +1,8 @@
 package com.capgemini.go.dto;
 
+import java.util.Date;
+import java.util.List;
+
 public class ViewSalesReportByUserDTO {
 	
 	private String userId;
@@ -45,4 +48,5 @@ public class ViewSalesReportByUserDTO {
 		this.productPrice = productPrice;
 	}
 
+	
 }
