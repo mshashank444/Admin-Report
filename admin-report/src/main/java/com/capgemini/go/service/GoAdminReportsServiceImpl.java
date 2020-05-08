@@ -7,7 +7,7 @@ import java.util.List;
 
 import com.capgemini.go.dao.GoAdminReportsDao;
 import com.capgemini.go.dto.ViewDetailedSalesReportByProductDTO;
-import com.capgemini.go.dto.ViewSalesReportByUserDTO;
+import com.capgemini.go.dto.ViewSalesReportByUserAndCategoryDTO;
 
 
 
@@ -26,15 +26,23 @@ public class GoAdminReportsServiceImpl implements GoAdminReportsService{
 	
 	
 
-	public List<ViewSalesReportByUserDTO> viewSalesReportByUserAndCategory(Date entry, Date exit, String TargetuserId,int category){
+	public List<ViewSalesReportByUserAndCategoryDTO> viewSalesReportByUserAndCategory(Date entry, Date exit, String targetuserId,int category){
 		
-		List<ViewSalesReportByUserDTO> result = new ArrayList<ViewSalesReportByUserDTO>();
+		List<ViewSalesReportByUserAndCategoryDTO> result = new ArrayList<ViewSalesReportByUserAndCategoryDTO>();
+		
+		result = goAdminReportsDao.viewSalesReportByUserAndCategory(entry, exit, targetuserId, category);
+		
+		return result;
 		
 	}
 	
 	public List<ViewDetailedSalesReportByProductDTO> viewDetailedSalesReportByProduct(Date entry, Date exit, int category){
 
 		List<ViewDetailedSalesReportByProductDTO> result = new ArrayList<ViewDetailedSalesReportByProductDTO>();
+		
+		result = goAdminReportsDao.viewDetailedSalesReportByProduct(entry, exit, category);
+		
+		return result;
 
 	}
 

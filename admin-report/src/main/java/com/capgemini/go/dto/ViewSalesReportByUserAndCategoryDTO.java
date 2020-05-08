@@ -1,9 +1,8 @@
 package com.capgemini.go.dto;
 
-import java.util.Date;
-import java.util.List;
 
-public class ViewSalesReportByUserDTO {
+
+public class ViewSalesReportByUserAndCategoryDTO {
 	
 	private String userId;
 	private String date;
