@@ -1,39 +1,45 @@
 package com.capgemini.go.dto;
 
-public class UserDTO {
+import java.io.Serializable;
 
+@Entity
+@Table(name = "USER")
+public class UserDTO implements Serializable {
 
-
-
-	private String userId;
-	private String userPassword;
-	private String userRole; // role are productmaster, retailer, admin
-	String email;
-	String phoneNo;
 	
+	private static final long serialVersionUID = -8450180103620249767L;
+
+	@Id
+	@Column(name = "USER_ID", unique = true, nullable = false, length = 30)
+	private int userId;
+
+	@Column(name = "USER_PASSWORD", unique = false, nullable = false, length = 30)
+	private String userPassword;
+
+	@Column(name = "USER_ROLE", unique = false, nullable = false, length = 20)
+	private String userRole;//	Role Can be ADMIN, Retailer, Product Master
+	
+	@column(name = "USER_EMAIL", unique = false, nullable = false, length = 20)
+	private String userEmail;
+	
+	@column(name = "USER_PHONENO", unique = false, nullable = false, length = 20)
+	private String userPhoneNo;
 
 
-	public UserDTO(String userId, String userPassword, String userRole, String email, String phoneNo) {
+
+
+	public UserDTO(int userId, String userPassword, String userRole) {
 		super();
 		this.userId = userId;
 		this.userPassword = userPassword;
 		this.userRole = userRole;
-		this.email = email;
-		this.phoneNo = phoneNo;
-		
 	}
 
-
-	public UserDTO() {
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
@@ -53,27 +59,26 @@ public class UserDTO {
 		this.userRole = userRole;
 	}
 	
-	public String getEmail() {
-		return email;
+	public String getUserEmail() {
+		return userRole;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 	
-	public String getPhoneNo() {
-		return phoneNo;
+	public String getUserPhoneNo() {
+		return userPhoneNo;
 	}
 
-	public void setPhoneNo(String phoneNo) {
-		this.phoneNo = phoneNo;
+	public void setUserPhoneNo(String userPhoneNo) {
+		this.userPhoneNo = userPhoneNo;
 	}
 	
 	
 	@Override
 	public String toString() {
-		return "UserEntity [userId=" + userId + ", userPassword="+ userPassword + ", userRole=" + userRole + ", "
-				+ "email="+ email +", phoneNo=" + phoneNo + "]";
+		return "UserEntity [userId=" + userId + ", userPassword="+ userPassword + ", userRole=" + userRole + "]";
 	}
 }
 
