@@ -9,12 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>com.capgemini.go</groupId>
-	<artifactId>admin-report</artifactId>
+	<groupId>org.cap</groupId>
+	<artifactId>Admin-report</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>admin-report</name>
-	<description>admin-report management</description>
+	<name>Admin-report</name>
+	<description>Admin-report management</description>
 
 	<properties>
 		<java.version>1.8</java.version>
