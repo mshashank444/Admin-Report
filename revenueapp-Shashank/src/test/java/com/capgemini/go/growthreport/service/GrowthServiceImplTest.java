@@ -39,6 +39,7 @@ public class GrowthServiceImplTest {
         item1.setAmountChange(12500);
         item1.setPercentageGrowth(100);
         item1.setColor("GREEN");
+        item1.setCategory(1);
         item1=entityManager.merge(item1);
 
         GrowthReportItem item2 = new GrowthReportItem();
@@ -48,6 +49,7 @@ public class GrowthServiceImplTest {
         item2.setAmountChange(120);
         item2.setPercentageGrowth(10);
         item2.setColor("BLUE");
+        item2.setCategory(1);
         item2=entityManager.merge(item2);
 
 

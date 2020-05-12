@@ -13,6 +13,8 @@ public class GrowthReportItem {
     @GeneratedValue
     private int id;
 
+    private int category;
+
     private String period;
 
     private double revenue;
@@ -22,6 +24,14 @@ public class GrowthReportItem {
     private double percentageGrowth;
 
     private String color;
+
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
+    }
 
     public int getId() {
         return id;

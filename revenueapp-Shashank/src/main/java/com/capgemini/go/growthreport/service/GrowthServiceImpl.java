@@ -56,31 +56,33 @@ public class GrowthServiceImpl implements IGrowthService {
                 growthReportItem.setAmountChange(change);
                 percentGrowth=(change/thisRevenue)*100;
                 growthReportItem.setPercentageGrowth(percentGrowth);
+                growthReportItem.setColor(colorCode());
 
             }else {
                 growthReportItem.setAmountChange(growthReportItem.getRevenue());
                 double thisRevenue=growthReportItem.getRevenue();
                 percentGrowth=100;
+                growthReportItem.setColor(colorCode());
 
             }
 
             growths.add(growthReportItem);
         }
 
-        GrowthReportItem growthReportItem = new GrowthReportItem();
+        return growths;
+
+    }
+
+    public String colorCode(){
+        GrowthReportItem growthReportItem= new GrowthReportItem();
         double percentGrowth = growthReportItem.getPercentageGrowth();
         if(percentGrowth>10){
-            growthReportItem.setColor("GREEN");
+            return "GREEN";
         }
         if(percentGrowth>=2 && percentGrowth<=10){
-            growthReportItem.setColor("BLUE");
+            return "BLUE";
         }
-        if(percentGrowth<2){
-            growthReportItem.setColor("RED");
-        }
-        growths.add(growthReportItem);
-
-        return growths;
+        return "RED";
 
     }
 
